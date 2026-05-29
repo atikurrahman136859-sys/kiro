@@ -50,7 +50,7 @@ When a north-star number moves, you can trace *down* the pyramid to the cause.
 ### Acquisition & marketing
 | Metric | Definition |
 |---|---|
-| **CAC** | Cost to acquire a customer (blended online + offline) |
+| **CAC** | Cost to acquire a customer (blended across digital channels) |
 | **ROAS** | Revenue ÷ ad spend |
 | **Conversion rate** | Visitors/leads → customers |
 | **Lead volume & quality** | MQLs/SQLs and their close rate |
@@ -102,7 +102,7 @@ flowchart LR
         CRM[CRM/Sales]
         CXT[Support/CX]
         FINS[Finance]
-        OFF[Offline: codes/QR/loyalty]
+        MKTP[Marketplaces / Affiliate]
     end
     SOURCES --> WH[["Data layer /\nwarehouse"]]
     WH --> CLIENTDASH["Client Dashboard\n(outcomes + ROI)"]
@@ -116,8 +116,9 @@ flowchart LR
 | **Ops dashboard** | Pods & practices | Delivery health, KPIs by channel, utilization |
 | **Exec dashboard** | Leadership | MRR/ARR, NRR, margin, pipeline, retention |
 
-> Offline gets its own data source line on purpose — QR/code/loyalty data flows into
-> the **same** warehouse so online + offline live in one funnel (see [`05`](05-online-offline-strategy.md)).
+> Every channel — including marketplaces and affiliate — flows into the **same**
+> warehouse so all digital channels live in one funnel (see
+> [`05`](05-digital-channel-strategy.md)).
 
 ---
 

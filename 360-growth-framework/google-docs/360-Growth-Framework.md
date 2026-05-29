@@ -1,6 +1,6 @@
 # The 360° Business Growth & Service Integration Framework
 
-A complete operating model for a full-service business solutions provider that helps clients launch, build, operate, market, digitize, optimize, and scale across both online and offline channels. This framework positions the firm not as a vendor of one-off services, but as a long-term business growth partner that walks with the client through every phase of their lifecycle.
+A complete operating model for an online-only 360° digital services provider that helps clients launch, build, market, digitize, optimize, and scale across the full digital landscape (web, e-commerce, search, social, content, paid media, email, automation, and data). This framework positions the firm not as a vendor of one-off services, but as a long-term digital growth partner that walks with the client through every phase of their lifecycle. Every capability here is delivered digitally; we do not provide offline or physical-media services (no out-of-home, print, retail, or field activation).
 
 ## Contents
 
@@ -9,7 +9,7 @@ A complete operating model for a full-service business solutions provider that h
 - Part 3 — Service-to-Phase Integration Framework
 - Part 4 — The Business Ecosystem
 - Part 5 — Revenue Opportunities Per Phase
-- Part 6 — Online + Offline Strategy Alignment
+- Part 6 — Digital Channel & Funnel Strategy
 - Part 7 — Client Retention Model
 - Part 8 — Internal Team Structure by Phase
 - Part 9 — SOP & Workflow Recommendations
@@ -54,7 +54,7 @@ Legend: **Lead** = primary owner of the phase; **Heavy** = major involvement; **
 
 - One client, one journey, one account team. The client experiences a single relationship, not a collection of disconnected projects.
 - Every service has a "next service." Each deliverable is designed to create the natural need for the following one (research, brand, website, ads, retention, scaling).
-- Online and offline are one strategy, not two budgets. Awareness, trust, and conversion are orchestrated across both worlds.
+- Every digital channel is one connected strategy, not separate silos. Search, social, content, paid media, email, and on-site experience are orchestrated as a single funnel with one set of numbers.
 - Data is the connective tissue. A shared analytics layer lets every team see the same truth and prove ROI continuously.
 - Retainers over transactions. The goal of every project is to earn the right to the next phase and convert the client into a recurring growth partnership.
 
@@ -87,7 +87,7 @@ For every phase we define six things, so the whole company shares one mental mod
 | Key activities | Brand identity creation, company setup, business registration, legal documentation, operational planning. |
 | Lead services | Branding & Creative, Legal & Compliance, Operations. |
 | Supporting services | Technology (domain, email, CRM, business tools setup), Strategy (operating-model design). |
-| Deliverables | Full brand identity (logo, guidelines, packaging, messaging, tone), company assets, operational framework, legal setup, digital infrastructure. |
+| Deliverables | Full brand identity (logo, guidelines, visual system, messaging, tone), company assets, operational framework, legal setup via compliance partners, digital infrastructure. |
 | Exit trigger to Phase 3 | "We have a brand and a legal base." The client needs to be findable and sellable online. |
 
 ### Phase 3 — Digital Presence & Online Business Setup
@@ -108,9 +108,9 @@ For every phase we define six things, so the whole company shares one mental mod
 | --- | --- |
 | Client objective | Generate awareness, acquire customers, create market-entry momentum. |
 | Client challenges | No audience yet, high cost of acquisition, weak conversion, no sales process, no PR/credibility. |
-| Key activities | Launch campaign, advertising, PR strategy, influencer collaborations, sales activation. |
+| Key activities | Launch campaign, paid advertising, digital PR strategy, influencer collaborations, sales activation. |
 | Lead services | Marketing and Sales Support. |
-| Supporting services | Public Relations (media outreach, press, events), Offline Marketing (outdoor, print, retail branding, activations), Automation (lead nurture). |
+| Supporting services | Digital PR & Influencer (online media outreach, podcasts, creator collaborations), Marketplaces & Affiliate (channel reach), Automation (lead nurture). |
 | Deliverables | Marketing campaigns, launch strategy, lead acquisition system, PR coverage, sales process. |
 | Exit trigger to Phase 5 | "Customers are coming in." The client needs to serve, satisfy, and retain them. |
 
@@ -175,7 +175,7 @@ Rows are service lines. Columns are lifecycle phases. Each cell is the specific 
 | Service line | P1 Discovery | P2 Foundation | P3 Digital | P4 Launch | P5 Operate | P6 Scale | P7 Transform |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Strategy & Consulting | Market & feasibility research, business model | Operating-model design | Digital roadmap | GTM strategy | Performance review | Expansion strategy | Transformation strategy |
-| Branding & Creative | Positioning, personas, naming | Identity, guidelines, packaging | Web visuals, UI/UX, social creative | Campaign creative | Reputation & CX brand | Sub-brands, new markets | Rebrand / evolution |
+| Branding & Creative | Positioning, personas, naming | Identity, guidelines, design system | Web visuals, UI/UX, social creative | Campaign creative | Reputation & CX brand | Sub-brands, new markets | Rebrand / evolution |
 | Web & Technology | Tech opportunity scan | Domain, email, CRM, tooling | Website, e-comm, app, hosting | Landing pages, tracking | ERP, inventory, support tech | Scalable infra, integrations | AI platforms, re-platforming |
 | Digital Marketing | SEO & market-gap mapping | Channel planning | SEO foundation, GBP, social setup | Paid ads, influencer, email | Retargeting, lifecycle email | Omnichannel, advanced SEO | Predictive & intelligent media |
 | Sales & CRM | Revenue model | CRM setup | Funnel & lead capture | Pipeline, scripts, CRO | Renewal/upsell motions | Channel & partner sales | Revenue intelligence |
@@ -269,7 +269,7 @@ Target portfolio mix at maturity: about 60% retainer, 30% project, 10% performan
 | 1 Discovery | Market research & feasibility ($$), business strategy/advisory ($$), financial forecasting ($) | Monthly strategic advisory retainer |
 | 2 Foundation | Brand identity system ($$ to $$$), legal setup plus referral fees ($$), operations setup ($$), tool configuration ($) | Brand-guardianship retainer plus tool management fees |
 | 3 Digital | Website/e-commerce build ($$$), app development ($$$$), content/photo/video ($$), analytics setup ($$) | Hosting + maintenance + CRO retainer (very sticky) |
-| 4 Launch | Launch campaign ($$$), paid media management (retainer plus % of spend), influencer/PR ($$ to $$$), offline launch ($$ to $$$), sales enablement ($$) | Always-on performance marketing retainer (% of spend plus fee) |
+| 4 Launch | Launch campaign ($$$), paid media management (retainer plus % of spend), influencer/PR ($$ to $$$), marketplace & affiliate launch ($$), sales enablement ($$) | Always-on performance marketing retainer (% of spend plus fee) |
 | 5 Operate/Retain | Helpdesk/support, loyalty programs, ERP/inventory ($$$), dashboards, automation | CX + analytics + automation managed service |
 | 6 Scale | Expansion/franchise strategy plus success fee ($$$$), performance marketing at scale, infrastructure scaling ($$$), fundraising plus success fee | Expanded multi-market retainers; performance share on growth |
 | 7 Transform | Digital transformation programs ($$$$), AI implementation ($$$), rebranding ($$$), predictive analytics | Innovation/intelligence retainer |
@@ -295,43 +295,58 @@ The engine runs: Entry project (any phase), then Prove value (a clear KPI win), 
 
 Positioning line for sales: "You can buy a project, or you can buy a growth partner. The project gets you one result; the partnership gets you every result, connected — and it costs less per outcome because everything compounds."
 
-## Part 6 — Online + Offline Strategy Alignment
+## Part 6 — Digital Channel & Funnel Strategy
 
-A true 360° partner does not run "digital" and "traditional" as separate teams with separate budgets and separate reports. It is one customer, one journey, one funnel, one measurement model, expressed across both online and offline channels.
+As an online-only 360° digital provider, our edge is not "we run ads." It is that we orchestrate every digital channel as one customer, one journey, one funnel, one measurement model — instead of letting SEO, paid, social, email, and on-site experience run as disconnected silos with their own budgets and their own vanity reports.
 
-### The guiding principle: O2O (online-to-offline and back)
+### The guiding principle: one funnel, every channel
 
-The customer does not think in channels. They research online, buy in-store, get support on chat, and post a review on social. The journey loops: Discover (search/SEO, social, billboards/print, word of mouth/events), then Consider (website, reviews/reputation, store visit/showroom), then Convert (online checkout, in-store POS, sales rep), then Keep & Grow (email/SMS, loyalty, support, community), and back to Discover. Every touchpoint — online or offline — writes into the same customer profile so the journey is continuous and measurable.
+The customer does not think in channels. They discover a brand on social, search it, read reviews, get retargeted, buy on the site, and get nurtured by email. The journey loops: Awareness (SEO/content, paid social, paid search, video, organic social, digital PR/influencer), then Consideration (website/app, retargeting, reviews/reputation, email capture), then Conversion (e-commerce checkout, landing pages/CRO, marketplaces), then Retention & Advocacy (email/SMS, loyalty/referrals, support, online community), and back to Awareness. Every touchpoint writes into the same customer profile — stitched by pixels, UTMs, and CRM IDs — so the journey is continuous, attributable, and optimizable.
 
-### Online plus offline by lifecycle phase
+### Channels by lifecycle phase
 
-| Phase | Online plays | Offline plays | The bridge |
-| --- | --- | --- | --- |
-| 1 Discovery | Search trends, social listening, digital competitor scan | Field interviews, focus groups, retail audits | Combine digital demand data with on-the-ground insight |
-| 2 Foundation | Domain, digital brand assets, profiles | Printed identity, signage, packaging, cards | One brand system applied to pixels and print |
-| 3 Digital | Website, e-comm, social, GBP | Store/QR signage, printed collateral with URLs | QR codes and "find us online" drive offline to online |
-| 4 Launch | Paid social/search, influencers, email | Events, OOH, flyers, retail activations, PR | Trackable promo codes plus UTM'd QR codes tie offline to the funnel |
-| 5 Operate/Retain | Lifecycle email/SMS, online support, reviews | In-store loyalty, packaging inserts, community events | Loyalty ID unifies online and offline purchases |
-| 6 Scale | Omnichannel paid, marketplaces, new geos online | New locations, franchise, distribution, trade shows | Central data shows which channel mix wins per market |
-| 7 Transform | AI personalization, predictive media | Experiential retail, flagship experiences | Unified profile powers personalization everywhere |
+| Phase | Channel emphasis | What we do |
+| --- | --- | --- |
+| 1 Discovery | Search & social listening | Keyword/demand research, social listening, digital competitor scan, SEO gap analysis |
+| 2 Foundation | Owned channels setup | Domain, brand profiles, analytics, channel and content plan |
+| 3 Digital | Website, SEO, social, GBP | Launch-ready site/store, SEO foundation, social presence, tracking |
+| 4 Launch | Paid social/search, influencer, email | Launch campaigns, creator collabs, digital PR, lead capture |
+| 5 Operate/Retain | Email/SMS, retargeting, reviews, support | Lifecycle automation, reputation, retargeting, support channels |
+| 6 Scale | Omnichannel paid, marketplaces, new geos | Scale spend, add channels/marketplaces, expand to new digital markets |
+| 7 Transform | AI personalization, predictive media | Predictive audiences, personalization, automated optimization |
 
-### The bridge mechanisms
+### The digital channel portfolio
 
-These concrete tools connect offline to online so the funnel stays unbroken and attributable. Rule: no offline tactic ships without a tracking bridge.
+| Channel | Primary job | Phase emphasis |
+| --- | --- | --- |
+| SEO & content | Capture existing demand, build authority | 3 to 7 |
+| Paid search (PPC) | Convert high-intent demand | 4 to 6 |
+| Paid social | Create demand, retarget | 4 to 6 |
+| Video / YouTube | Awareness, education, retargeting | 4 to 7 |
+| Email / SMS / push | Nurture, retain, reactivate | 4 to 7 |
+| Organic social | Brand, community, social proof | 2 to 7 |
+| Digital PR & influencer | Credibility, reach, backlinks | 4, 6, 7 |
+| Marketplaces & affiliate | Reach and distribution | 6 |
+| Website / app / e-commerce | Convert and transact | 3 to 7 |
+| Online community | Retention, advocacy, insight | 5 to 7 |
+
+### The connection mechanisms
+
+A "360° digital" promise is only real if the channels are technically wired together. These mechanisms keep the funnel unbroken and attributable. Rule: no channel goes live without tracking and CRM wiring in place.
 
 | Mechanism | Connects | What it enables |
 | --- | --- | --- |
-| QR codes (UTM-tagged) | Print/OOH/retail to website | Attribute offline media to online actions |
-| Promo / discount codes | Events/flyers/influencers to checkout | Track which offline source drove the sale |
-| Loyalty ID / phone / email | In-store to CRM profile | Unify online and offline purchase history |
-| Reserve online, pick up in store | Online to offline footfall | Convert digital intent to store visits |
-| Trackable call numbers | Print/OOH to phone sales | Measure call-driven conversions |
-| Geo-targeted digital | Online ads to local stores | Drive footfall to specific locations |
-| Post-purchase QR on packaging | Offline product to reviews/community | Turn buyers into advocates and data |
+| UTM tagging (consistent taxonomy) | Every campaign to analytics | Clean source/medium attribution |
+| Pixels & server-side tracking | Ads and site events | Accurate conversion data, better optimization |
+| CRM / customer ID stitching | Anonymous to known user | One profile across sessions and channels |
+| Shared audiences | CRM and ad platforms | Retargeting, lookalikes, suppression lists |
+| Consent & first-party data layer | Site and all tools | Privacy-safe, durable measurement |
+| Lead routing | Forms/ads to CRM to sales | No lead lost; full context for follow-up |
+| Marketing automation | CRM and email/SMS | Triggered lifecycle journeys at scale |
 
 ### Budget allocation logic
 
-Do not split budget by "digital versus traditional." Allocate by job-to-be-done and measured contribution: start with a balanced awareness/conversion split appropriate to the phase (early phases lean awareness; later phases lean conversion and retention); measure every channel's contribution to the unified funnel; reallocate monthly toward the channels (online or offline) with the best marginal return; and protect a fixed percent for brand/awareness so the funnel keeps filling. The 360° advantage is that because we run both worlds and measure them in one model, we can move budget to whatever works.
+Allocate by job-to-be-done and measured contribution, not by the channel each specialist likes to defend: start with an awareness/conversion/retention split appropriate to the phase (early phases lean awareness; later phases lean conversion and retention); measure every channel's contribution to the unified funnel (including assisted conversions, not just last-click); reallocate monthly toward the channels with the best marginal return; and protect a fixed percent for top-of-funnel/brand so the funnel keeps filling. The 360° digital advantage is that because we run every channel and measure them in one model, we can move budget to whatever works.
 
 ## Part 7 — Client Retention Model
 
@@ -379,7 +394,7 @@ This is what we sell, and it mirrors our own model. The customer value retention
 | Support excellence | Helpdesk, chatbot, SLAs, omnichannel | CX + Tech |
 | Reputation | Review generation and management | Branding + Marketing |
 | Win-back | Churn prediction plus reactivation offers | Data + Marketing |
-| Community | Events, groups, content, advocacy | Branding + Marketing |
+| Community | Online community, groups, webinars, content, advocacy | Branding + Marketing |
 
 The mirror principle: we sell retention because we practice retention. The same loop — deliver value, prove it, deepen the relationship, expand — runs at both levels. Retention is both our service and our business model.
 
@@ -404,7 +419,7 @@ This is how firms stay integrated and deep: the client feels one team (the pod),
 | Strategist | Insight, positioning, roadmap logic | Strategy practice |
 | Creative Director plus designers | Brand, creative, UX | Brand practice |
 | Web/Tech leads plus developers | Sites, apps, infrastructure, automation | Web/Tech practice |
-| Marketing leads plus specialists | SEO, paid, content, social, offline | Marketing practice |
+| Marketing leads plus specialists | SEO, paid, content, social, email | Marketing practice |
 | Sales/CRM specialist (RevOps) | Funnels, CRM, pipeline, CRO | Sales practice |
 | CX / Ops specialist | Support, loyalty, SOPs, ERP | CX & Ops practice |
 | Data analyst / engineer | Dashboards, attribution, insight, AI | Data practice |
@@ -449,7 +464,7 @@ SOPs (Standard Operating Procedures) turn a 360° idea into a 360° machine. The
 | 1 — Firm-wide | Onboarding, QBR, billing, escalation, data governance | Operations / PMO |
 | 2 — Lifecycle | Discovery process, launch process, retention process | Pod / Practice leads |
 | 3 — Service | "How we build a website", "How we run a paid campaign" | Practice leads |
-| 4 — Tool/Task | "Set up GA4", "Configure CRM pipeline", "QR campaign setup" | Specialists |
+| 4 — Tool/Task | "Set up GA4", "Configure CRM pipeline", "Build a retargeting audience" | Specialists |
 
 ### The master client workflow
 
@@ -498,7 +513,7 @@ From top to bottom: North-star (client revenue growth plus retention), then Outc
 
 | Metric | Definition |
 | --- | --- |
-| CAC | Cost to acquire a customer (blended online plus offline) |
+| CAC | Cost to acquire a customer (blended across digital channels) |
 | ROAS | Revenue divided by ad spend |
 | Conversion rate | Visitors/leads to customers |
 | Lead volume & quality | MQLs/SQLs and their close rate |
@@ -527,7 +542,7 @@ From top to bottom: North-star (client revenue growth plus retention), then Outc
 
 ### Dashboards and cadence
 
-Three dashboards read from one data layer/warehouse fed by web/analytics, ad platforms, CRM/sales, support/CX, finance, and offline sources (codes/QR/loyalty): the Client dashboard (outcomes, ROI, funnel, retention — the proof), the Internal Ops dashboard (delivery health, KPIs by channel, utilization), and the Exec dashboard (MRR/ARR, NRR, margin, pipeline). Offline gets its own data source line on purpose so online plus offline live in one funnel. Reporting cadence: real-time/daily (spend, pacing, anomalies, outages for delivery teams); weekly (channel performance and optimizations for pod plus client lead); monthly (outcome KPIs versus targets for client plus pod); quarterly QBR (results, insights, maturity, roadmap for client execs); quarterly internal (firm KPIs, margins, retention for leadership).
+Three dashboards read from one data layer/warehouse fed by web/analytics, ad platforms, CRM/sales, support/CX, finance, and marketplace/affiliate sources: the Client dashboard (outcomes, ROI, funnel, retention — the proof), the Internal Ops dashboard (delivery health, KPIs by channel, utilization), and the Exec dashboard (MRR/ARR, NRR, margin, pipeline). Every channel flows into the same warehouse so all digital channels live in one funnel. Reporting cadence: real-time/daily (spend, pacing, anomalies, outages for delivery teams); weekly (channel performance and optimizations for pod plus client lead); monthly (outcome KPIs versus targets for client plus pod); quarterly QBR (results, insights, maturity, roadmap for client execs); quarterly internal (firm KPIs, margins, retention for leadership).
 
 Principles for KPIs that work: tie every metric to revenue/retention; baseline first; set targets and owners, not just actuals; one source of truth; track leading plus lagging; make it visible; and always act on it (each review ends in decisions).
 
@@ -565,7 +580,7 @@ Remove any one pillar and the model collapses into "just another agency." Togeth
 
 ### The implementation roadmap
 
-First 90 days — build the spine: stand up the data core (one CRM plus analytics warehouse); document the foundational SOPs (onboarding, handoff, reporting, QBR); define the KPI tree plus dashboards; map current clients on the maturity model to find cross-sell; adopt roadmap-first selling. Months 4 to 12 — turn the flywheel: form pods plus practices and assign Growth Partner Leads; productize the top offers per phase and set packaging tiers; launch the QBR engine for all retainer clients; build the partner network; automate onboarding, reporting, and nurture; instrument online plus offline into one funnel; review firm KPIs quarterly.
+First 90 days — build the spine: stand up the data core (one CRM plus analytics warehouse); document the foundational SOPs (onboarding, handoff, reporting, QBR); define the KPI tree plus dashboards; map current clients on the maturity model to find cross-sell; adopt roadmap-first selling. Months 4 to 12 — turn the flywheel: form pods plus practices and assign Growth Partner Leads; productize the top offers per phase and set packaging tiers; launch the QBR engine for all retainer clients; build the partner network; automate onboarding, reporting, and nurture; instrument every digital channel into one funnel; review firm KPIs quarterly.
 
 ### Maturity of the firm itself
 
@@ -581,7 +596,7 @@ The destination is a firm where the operating system — not the founders — de
 
 ### The one-sentence positioning
 
-"We are not a service provider you hire for a task — we are the growth partner who maps your entire business journey, connects every capability you need across online and offline, and stays with you from idea to enterprise." The promises that back it up: one relationship, every capability; connected, not bundled; proven, not promised (one dashboard ties our work to your revenue); online plus offline, one strategy; and we grow when you grow.
+"We are not a service provider you hire for a task — we are the digital growth partner who maps your entire business journey, connects every digital capability you need, and stays with you from idea to enterprise." The promises that back it up: one relationship, every capability; connected, not bundled; proven, not promised (one dashboard ties our work to your revenue); every channel, one strategy; and we grow when you grow.
 
 ## Part 12 — How Top 360° Providers Operate (Benchmark)
 

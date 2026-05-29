@@ -16,7 +16,7 @@ service does in that phase.
 | Service Line | P1 Discovery | P2 Foundation | P3 Digital | P4 Launch | P5 Operate/Retain | P6 Scale | P7 Transform |
 |---|---|---|---|---|---|---|---|
 | **Strategy & Consulting** | Market & feasibility research, business model | Operating-model design | Digital roadmap | GTM strategy | Performance review | Expansion strategy | Transformation strategy |
-| **Branding & Creative** | Positioning, personas, naming | Identity, guidelines, packaging | Web visuals, UI/UX, social creative | Campaign creative | Reputation & CX brand | Sub-brands, new markets | Rebrand / brand evolution |
+| **Branding & Creative** | Positioning, personas, naming | Identity, guidelines, design system | Web visuals, UI/UX, social creative | Campaign creative | Reputation & CX brand | Sub-brands, new markets | Rebrand / brand evolution |
 | **Web & Technology** | Tech opportunity scan | Domain, email, CRM, tooling | Website, e-comm, app, hosting | Landing pages, tracking | ERP, inventory, support tech | Scalable infra, integrations | AI platforms, re-platforming |
 | **Digital Marketing** | SEO & market-gap mapping | Channel planning | SEO foundation, GBP, social setup | Paid ads, influencer, email | Retargeting, lifecycle email | Omnichannel, advanced SEO | Predictive & intelligent media |
 | **Sales & CRM** | Revenue model | CRM setup | Funnel & lead capture | Pipeline, scripts, CRO | Renewal/upsell motions | Channel & partner sales | Revenue intelligence |
@@ -140,4 +140,4 @@ flowchart TD
 - [ ] Has the upstream handoff (data/assets) been received before work starts?
 - [ ] Is the "next phase" identified and on the account roadmap?
 - [ ] Is there one client-facing KPI dashboard, not one per team?
-- [ ] Are online and offline efforts attributed to the same funnel (see `05`)?
+- [ ] Are all digital channels attributed to the same funnel (see `05`)?

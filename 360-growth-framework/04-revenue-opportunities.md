@@ -60,8 +60,8 @@ and expansion; performance deals create upside and differentiation.
 |---|---|---|
 | Launch campaign (creative + strategy) | Project | $$$ |
 | Paid media management | **Retainer + % of ad spend** | recurring |
-| Influencer & PR programs | Project or retainer | $$–$$$ |
-| Offline launch (events, OOH, print) | Project | $$–$$$ |
+| Influencer & digital PR programs | Project or retainer | $$–$$$ |
+| Marketplace & affiliate launch (e.g., Amazon, app stores) | Project + commission | $$ |
 | Sales enablement & CRO | Project + retainer | $$ |
 **Recurring hook:** **always-on performance marketing retainer** (% of spend +
 management fee). This is often the single largest recurring line.

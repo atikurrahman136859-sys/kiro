@@ -55,7 +55,7 @@ flowchart TB
 | **Strategist** | Insight, positioning, roadmap logic | Strategy practice |
 | **Creative Director + designers** | Brand, creative, UX | Brand practice |
 | **Web/Tech leads + developers** | Sites, apps, infrastructure, automation | Web/Tech practice |
-| **Marketing leads + specialists** | SEO, paid, content, social, offline | Marketing practice |
+| **Marketing leads + specialists** | SEO, paid, content, social, email | Marketing practice |
 | **Sales/CRM specialist (RevOps)** | Funnels, CRM, pipeline, CRO | Sales practice |
 | **CX / Ops specialist** | Support, loyalty, SOPs, ERP | CX & Ops practice |
 | **Data analyst / engineer** | Dashboards, attribution, insight, AI | Data practice |
@@ -133,8 +133,8 @@ offer the full 360° immediately while protecting margin and quality:
 |---|---|---|
 | Legal / compliance | Rarely (regulated) | Almost always — white-label legal partners |
 | Specialized dev (apps, AI) | Recurring demand justifies it | Spiky / niche demand |
-| Production (video, print, OOH) | High volume | Project-based |
-| Niche marketing (PR, influencers) | Core to your positioning | Long-tail needs |
+| Production (video, motion, design) | High volume | Project-based |
+| Niche marketing (digital PR, influencers) | Core to your positioning | Long-tail needs |
 
 > **Rule:** the client always experiences *one firm*. Whether a capability is
 > in-house or partner is our operational concern, never their problem. The Growth

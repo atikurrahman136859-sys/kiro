@@ -22,7 +22,7 @@ flowchart TB
 | **1 — Firm-wide** | Onboarding, QBR, billing, escalation, data governance | Operations / PMO |
 | **2 — Lifecycle** | Discovery process, launch process, retention process | Pod / Practice leads |
 | **3 — Service** | "How we build a website", "How we run a paid campaign" | Practice leads |
-| **4 — Tool/Task** | "Set up GA4", "Configure CRM pipeline", "QR campaign setup" | Specialists |
+| **4 — Tool/Task** | "Set up GA4", "Configure CRM pipeline", "Build a retargeting audience" | Specialists |
 
 ---
 

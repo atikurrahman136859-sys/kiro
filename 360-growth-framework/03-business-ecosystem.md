@@ -107,41 +107,46 @@ flowchart TB
 
 ---
 
-## 3.4 Online + Offline as One Ecosystem
+## 3.4 The Unified Digital Funnel as One Ecosystem
 
 ```mermaid
 flowchart LR
-    subgraph ONLINE["ONLINE"]
-        W["Website / E-comm"]
+    subgraph AWARE["Awareness"]
         SEO["SEO / Content"]
-        ADS["Paid Social & Search"]
-        EMAIL["Email / CRM"]
-        SOCIAL["Social Media"]
+        PAIDS["Paid Social"]
+        PAIDSEARCH["Paid Search"]
+        VIDEO["Video / YouTube"]
+        SOCIAL["Organic Social"]
+        DPR["Digital PR / Influencer"]
     end
-    subgraph OFFLINE["OFFLINE"]
-        RETAIL["Retail / Branding"]
-        EVENTS["Events & Activations"]
-        PRINT["Print / OOH"]
-        PR["PR / Media"]
-        FIELD["Field Sales"]
+    subgraph CONSIDER["Consideration"]
+        W["Website / App"]
+        REVIEWS["Reviews / Reputation"]
+        RETARGET["Retargeting"]
     end
-    ADS --> W
-    SEO --> W
-    SOCIAL --> W
-    W --> EMAIL
-    EVENTS --> W
-    PRINT -->|QR / promo codes| W
-    RETAIL -->|loyalty signup| EMAIL
-    PR --> SOCIAL
+    subgraph CONVERT["Conversion"]
+        ECOM["E-commerce checkout"]
+        LP["Landing pages / CRO"]
+        MKTPLACE["Marketplaces"]
+    end
+    subgraph KEEP["Retention & Advocacy"]
+        EMAIL["Email / SMS"]
+        LOYALTY["Loyalty / referrals"]
+        SUPPORT["Support / CX"]
+        COMMUNITY["Online community"]
+    end
+    AWARE --> CONSIDER --> CONVERT --> KEEP
+    KEEP -.advocacy fuels awareness.-> AWARE
     W -. data .-> HUB[["Unified Customer Profile"]]
+    ECOM -. data .-> HUB
     EMAIL -. data .-> HUB
-    RETAIL -. data .-> HUB
-    EVENTS -. data .-> HUB
+    MKTPLACE -. data .-> HUB
 ```
 
-The point: **offline touchpoints feed the same customer profile as online ones**
-(via QR codes, promo codes, loyalty sign-ups, and trackable URLs). One funnel, one
-profile, one attribution model. Full detail in [`05`](05-online-offline-strategy.md).
+The point: **every digital channel writes into the same customer profile**, tied
+together by pixels, UTMs, and CRM IDs. One funnel, one profile, one attribution
+model — no channel runs in a silo. Full detail in
+[`05`](05-digital-channel-strategy.md).
 
 ---
 
@@ -157,7 +162,7 @@ mindmap
       Transformation
     Brand & Creative
       Identity & guidelines
-      Packaging
+      Social & ad creative
       Photography & video
       UI/UX
     Web & Technology
@@ -168,8 +173,8 @@ mindmap
     Marketing
       SEO & content
       Paid media
-      Influencer & PR
-      Offline / activations
+      Influencer & digital PR
+      Email & lifecycle
     Revenue
       Sales enablement
       CRM & pipeline

@@ -107,7 +107,7 @@ offers) grow accounts predictably; firms that don't rely on luck.
 | Strategy | How top firms use it |
 |---|---|
 | **Single source of truth** | One CRM/warehouse feeding all decisions |
-| **Attribution** | Connecting spend (online + offline) to revenue |
+| **Attribution** | Connecting spend across digital channels to revenue |
 | **Cohort / LTV analysis** | Understanding which clients/customers are worth most |
 | **Benchmarking** | Comparing performance to industry baselines to prove value |
 | **Predictive models** | Forecasting churn, demand, and growth to act early |

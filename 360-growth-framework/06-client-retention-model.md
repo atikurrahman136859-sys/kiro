@@ -101,7 +101,7 @@ flowchart LR
 | **Support excellence** | Helpdesk, chatbot, SLAs, omnichannel | CX + Tech |
 | **Reputation** | Review generation + management | Branding + Marketing |
 | **Win-back** | Churn prediction + reactivation offers | Data + Marketing |
-| **Community** | Events, groups, content, advocacy | Branding + Marketing |
+| **Community** | Online community, groups, webinars, content, advocacy | Branding + Marketing |
 
 ### B.3 Retention Metrics We Manage for Clients
 

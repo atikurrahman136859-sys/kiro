@@ -84,7 +84,7 @@ Four engines, one infrastructure. The **Growth Engine feeds the Demand Engine**
 8. **Launch the QBR engine** for all retainer clients (`06`).
 9. **Build the partner network** to cover capability gaps (`07`).
 10. **Automate** onboarding, reporting, and nurture (`08`).
-11. **Instrument online + offline** into one funnel (`05`).
+11. **Instrument every digital channel** into one funnel (`05`).
 12. **Review firm KPIs** quarterly: NRR, services/client, margin (`09`).
 
 ---
@@ -108,13 +108,13 @@ The firm travels its own lifecycle — apply the model to ourselves:
 
 ## 10.6 The One-Sentence Positioning
 
-> **"We are not a service provider you hire for a task — we are the growth partner
-> who maps your entire business journey, connects every capability you need across
-> online and offline, and stays with you from idea to enterprise."**
+> **"We are not a service provider you hire for a task — we are the digital growth
+> partner who maps your entire business journey, connects every digital capability
+> you need, and stays with you from idea to enterprise."**
 
 ### The promises that back it up
 1. **One relationship, every capability.** A single team, the full 360°.
 2. **Connected, not bundled.** Services share data and compound on each other.
 3. **Proven, not promised.** One dashboard ties our work to your revenue.
-4. **Online + offline, one strategy.** We move budget to whatever works.
+4. **Every channel, one strategy.** We move budget to whatever works across the digital funnel.
 5. **We grow when you grow.** Retainers and performance models align incentives.

@@ -59,7 +59,7 @@ For every phase we define six things, so the whole company shares one mental mod
 | **Key activities** | Brand identity creation, company setup, business registration, legal documentation, operational planning. |
 | **Lead services** | Branding & Creative + Legal & Compliance + Operations. |
 | **Supporting services** | Technology (domain, email, CRM, business tools setup), Strategy (operating-model design). |
-| **Deliverables** | Full brand identity (logo, guidelines, packaging, messaging, tone) · Company assets · Operational framework (SOPs, team structure, workflows) · Legal setup (registration, trademark, licensing, contracts) · Digital infrastructure. |
+| **Deliverables** | Full brand identity (logo, guidelines, visual system, messaging, tone) · Company assets · Operational framework (SOPs, team structure, workflows) · Legal setup via compliance partners (registration, trademark, contracts) · Digital infrastructure. |
 | **Exit trigger → Phase 3** | "We have a brand and a legal base." → Client needs to be findable and sellable online. |
 
 ---
@@ -84,9 +84,9 @@ For every phase we define six things, so the whole company shares one mental mod
 |-----------|--------|
 | **Client objective** | Generate awareness, acquire customers, create market-entry momentum. |
 | **Client challenges** | No audience yet, high cost of acquisition, weak conversion, no sales process, no PR/credibility. |
-| **Key activities** | Launch campaign, advertising, PR strategy, influencer collaborations, sales activation. |
+| **Key activities** | Launch campaign, paid advertising, digital PR strategy, influencer collaborations, sales activation. |
 | **Lead services** | Marketing + Sales Support. |
-| **Supporting services** | Public Relations (media outreach, press, events), Offline Marketing (outdoor, print, retail branding, activations), Automation (lead nurture). |
+| **Supporting services** | Digital PR & Influencer (online media outreach, podcasts, creator collaborations), Marketplaces & Affiliate (channel reach), Automation (lead nurture). |
 | **Deliverables** | Marketing campaigns · Launch strategy · Lead acquisition system · PR coverage · Sales process. |
 | **Exit trigger → Phase 5** | "Customers are coming in." → Client needs to serve, satisfy, and retain them. |
 

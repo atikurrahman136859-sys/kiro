@@ -1,12 +1,14 @@
 # The 360° Business Growth & Service Integration Framework
 
-> A complete operating model for a full-service business solutions provider that
-> helps clients **launch, build, operate, market, digitize, optimize, and scale** —
-> across both online and offline channels.
+> A complete operating model for an **online-only 360° digital services provider**
+> that helps clients **launch, build, market, digitize, optimize, and scale** —
+> across the full digital landscape (web, e-commerce, search, social, content,
+> paid media, email, automation, and data).
 
 This framework positions the firm not as a vendor of one-off services, but as a
-**long-term business growth partner** that walks with the client through every
-phase of their lifecycle.
+**long-term digital growth partner** that walks with the client through every
+phase of their lifecycle. Every capability here is delivered digitally; we do not
+provide offline/physical-media services (no OOH, print, retail, or field activation).
 
 ---
 
@@ -65,7 +67,7 @@ This repository is organized to map directly to the 10 required outputs.
 | [`02-service-to-phase-integration.md`](02-service-to-phase-integration.md) | 2. Service-to-phase integration framework |
 | [`03-business-ecosystem.md`](03-business-ecosystem.md) | 3. Visual business ecosystem |
 | [`04-revenue-opportunities.md`](04-revenue-opportunities.md) | 4. Revenue opportunities per phase |
-| [`05-online-offline-strategy.md`](05-online-offline-strategy.md) | 5. Online + offline strategy alignment |
+| [`05-digital-channel-strategy.md`](05-digital-channel-strategy.md) | 5. Digital channel & funnel strategy |
 | [`06-client-retention-model.md`](06-client-retention-model.md) | 6. Client retention model |
 | [`07-team-structure.md`](07-team-structure.md) | 7. Internal team structure by phase |
 | [`08-sop-and-workflows.md`](08-sop-and-workflows.md) | 8. SOP and workflow recommendations |
@@ -82,8 +84,9 @@ This repository is organized to map directly to the 10 required outputs.
 2. **Every service has a "next service."** Each deliverable is designed to create
    the natural need for the following one (research → brand → website → ads →
    retention → scaling).
-3. **Online and offline are one strategy, not two budgets.** Awareness, trust, and
-   conversion are orchestrated across both worlds.
+3. **Every digital channel is one connected strategy, not separate silos.** Search,
+   social, content, paid media, email, and on-site experience are orchestrated as a
+   single funnel with one set of numbers.
 4. **Data is the connective tissue.** A shared analytics layer lets every team see
    the same truth and lets us prove ROI continuously.
 5. **Retainers over transactions.** The goal of every project is to earn the right
