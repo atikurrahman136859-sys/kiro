@@ -56,6 +56,11 @@ def bullet(text):
 def empty():
     return '<w:p/>'
 
+def hr():
+    return ('<w:p><w:pPr><w:pBdr>'
+            '<w:bottom w:val="single" w:sz="6" w:space="1" w:color="BFBFBF"/>'
+            '</w:pBdr></w:pPr></w:p>')
+
 # ----------------------------- table --------------------------------------
 
 PAGE_WIDTH = 9360  # usable width in dxa (Letter, 1in margins)
@@ -119,6 +124,11 @@ def parse(md):
         line = lines[i]
         stripped = line.strip()
         if stripped == "":
+            i += 1
+            continue
+        # horizontal rule (---, ***, ___)
+        if re.fullmatch(r"(-{3,}|\*{3,}|_{3,})", stripped):
+            body.append(hr())
             i += 1
             continue
         # tables
