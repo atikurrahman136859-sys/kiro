@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local SEO Deep Audit — Newham Emergency Locksmiths</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:#E8250D;--amber:#F59E0B;--green:#16A34A;--navy:#0F1E2E;--slate:#1C2E40;
+    --mid:#2A3E52;--pale:#EFF4F8;--white:#FFFFFF;--text:#D4E2EF;--muted:#7A9BB5;
+    --accent:#00C2FF;--gold:#FFD166;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.7;font-size:15px;}
+  .site-header{background:linear-gradient(135deg,#0a1520 0%,#0F1E2E 60%,#0d2035 100%);border-bottom:3px solid var(--red);padding:48px 40px 40px;position:relative;overflow:hidden;}
+  .site-header::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(0,194,255,.08) 0%,transparent 70%);border-radius:50%;}
+  .header-tag{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+  .site-header h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,64px);color:var(--white);letter-spacing:2px;line-height:1;margin-bottom:8px;}
+  .site-header h1 span{color:var(--accent);}
+  .header-sub{font-size:14px;color:var(--muted);margin-top:12px;}
+  .score-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;}
+  .score-pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:12px 20px;text-align:center;min-width:110px;}
+  .score-pill .label{font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
+  .score-pill .val{font-family:'Bebas Neue',sans-serif;font-size:32px;line-height:1;}
+  .score-pill.red .val{color:var(--red);}
+  .score-pill.amber .val{color:var(--amber);}
+  .nav-tabs{background:var(--slate);border-bottom:1px solid rgba(255,255,255,.08);display:flex;overflow-x:auto;padding:0 40px;gap:4px;position:sticky;top:0;z-index:100;}
+  .nav-tab{padding:14px 20px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;text-decoration:none;transition:color .2s,border-color .2s;}
+  .nav-tab:hover,.nav-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
+  .main{max-width:1100px;margin:0 auto;padding:48px 40px 80px;}
+  .section{margin-bottom:64px;}
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.1);}
+  .section-icon{width:40px;height:40px;background:rgba(0,194,255,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  .section-head h2{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1.5px;color:var(--white);}
+  .section-head .desc{font-size:13px;color:var(--muted);margin-top:2px;}
+  .alert{border-left:4px solid var(--red);background:rgba(232,37,13,.08);border-radius:0 8px 8px 0;padding:16px 20px;margin-bottom:24px;font-size:14px;}
+  .alert.amber{border-color:var(--amber);background:rgba(245,158,11,.08);}
+  .alert.green{border-color:var(--green);background:rgba(22,163,74,.08);}
+  .alert strong{display:block;margin-bottom:4px;color:var(--white);font-weight:600;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+  .card{background:var(--slate);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;}
+  .card h3{font-size:13px;font-weight:600;letter-spacing:.5px;color:var(--white);margin-bottom:10px;}
+  .card p,.card li{font-size:13.5px;color:var(--text);}
+  .card ul{padding-left:18px;}
+  .card li{margin-bottom:6px;}
+  .badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;letter-spacing:.5px;padding:3px 9px;border-radius:20px;text-transform:uppercase;}
+  .badge.red{background:rgba(232,37,13,.2);color:#ff6b5a;}
+  .badge.amber{background:rgba(245,158,11,.2);color:var(--amber);}
+  .badge.green{background:rgba(22,163,74,.2);color:#4ade80;}
+  .badge.blue{background:rgba(0,194,255,.15);color:var(--accent);}
+  .badge.muted{background:rgba(122,155,181,.15);color:var(--muted);}
+  .tbl-wrap{overflow-x:auto;border-radius:10px;border:1px solid rgba(255,255,255,.08);margin-bottom:24px;}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13px;}
+  thead{background:rgba(255,255,255,.05);}
+  th{padding:12px 14px;text-align:left;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+  td{padding:11px 14px;border-top:1px solid rgba(255,255,255,.06);vertical-align:top;}
+  tr:hover td{background:rgba(255,255,255,.02);}
+  .priority-block{background:var(--slate);border-radius:12px;padding:24px;margin-bottom:16px;border-left:4px solid var(--red);}
+  .priority-block.p1{border-color:var(--amber);}
+  .priority-block.p2{border-color:var(--accent);}
+  .priority-block.p3{border-color:var(--green);}
+  .priority-block .ph{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px;}
+  .priority-block h3{font-size:16px;font-weight:600;color:var(--white);margin-bottom:14px;}
+  .task-list{list-style:none;}
+  .task-list li{padding:8px 0 8px 24px;position:relative;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,.05);}
+  .task-list li:last-child{border-bottom:none;}
+  .task-list li::before{content:'→';position:absolute;left:0;color:var(--accent);}
+  .stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+  .stat-box{flex:1;min-width:140px;background:var(--slate);border-radius:10px;padding:16px 18px;border:1px solid rgba(255,255,255,.08);}
+  .stat-box .sv{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--accent);line-height:1;}
+  .stat-box .sl{font-size:12px;color:var(--muted);margin-top:4px;}
+  .cite{font-size:11px;color:var(--muted);font-style:italic;margin-top:6px;}
+  .roadmap{position:relative;}
+  .rm-phase{position:relative;padding-left:32px;margin-bottom:36px;}
+  .rm-phase::before{content:'';position:absolute;left:10px;top:28px;bottom:-20px;width:2px;background:linear-gradient(to bottom,rgba(0,194,255,.4),transparent);}
+  .rm-dot{position:absolute;left:0;top:4px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;}
+  .rm-dot.r{background:var(--red);color:white;}
+  .rm-dot.a{background:var(--amber);color:#111;}
+  .rm-dot.b{background:var(--accent);color:#111;}
+  .rm-dot.g{background:var(--green);color:white;}
+  .rm-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+  .rm-phase h3{font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px;}
+  .rm-items{list-style:none;}
+  .rm-items li{font-size:13px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:baseline;gap:8px;}
+  .rm-items li:last-child{border:none;}
+  .effort{font-size:11px;color:var(--muted);white-space:nowrap;margin-left:auto;}
+  .kw-vol{font-family:'DM Mono',monospace;font-size:12px;color:var(--gold);}
+  .threat-high{color:var(--red);}
+  .threat-med{color:var(--amber);}
+  .threat-low{color:#4ade80;}
+  footer{text-align:center;padding:32px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:12px;}
+  code{font-family:'DM Mono',monospace;font-size:12px;background:rgba(0,194,255,.1);padding:2px 6px;border-radius:4px;color:var(--accent);}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-tag">Deep Local SEO Audit &amp; Strategy Report · May 2026</div>
+  <h1>Newham Emergency<br><span>Locksmiths</span></h1>
+  <div class="header-sub">newhamemergencylocksmiths.co.uk &nbsp;|&nbsp; GBP: /g/11zbpt261t &nbsp;|&nbsp; Enhanced AI SEO Analysis</div>
+  <div class="score-row">
+    <div class="score-pill red"><div class="label">Overall</div><div class="val">17</div></div>
+    <div class="score-pill red"><div class="label">Technical</div><div class="val">12</div></div>
+    <div class="score-pill red"><div class="label">On-Page</div><div class="val">18</div></div>
+    <div class="score-pill amber"><div class="label">Local SEO</div><div class="val">42</div></div>
+    <div class="score-pill red"><div class="label">Indexability</div><div class="val">0</div></div>
+    <div class="score-pill amber"><div class="label">Structure</div><div class="val">35</div></div>
+  </div>
+</header>
+<nav class="nav-tabs">
+  <a href="#executive" class="nav-tab active">Executive Summary</a>
+  <a href="#local-seo" class="nav-tab">Local SEO Deep Dive</a>
+  <a href="#gbp" class="nav-tab">GBP Analysis</a>
+  <a href="#citations" class="nav-tab">Citations &amp; NAP</a>
+  <a href="#keywords" class="nav-tab">Keywords</a>
+  <a href="#competitors" class="nav-tab">Competitors</a>
+  <a href="#area-pages" class="nav-tab">Area Pages</a>
+  <a href="#strategy" class="nav-tab">Strategy</a>
+  <a href="#roadmap" class="nav-tab">Roadmap</a>
+</nav>
+<main class="main">
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="section" id="executive">
+  <div class="section-head">
+    <div class="section-icon">&#9889;</div>
+    <div><h2>Executive Summary</h2><div class="desc">The situation, the opportunity, and what to do first</div></div>
+  </div>
+  <div class="alert">
+    <strong>CRITICAL: Bot-Detection Firewall Blocking Googlebot</strong>
+    Site has 16 pages in sitemap but zero are indexed (site: query returns nothing). A Cloudflare/CDN firewall is blocking all bots. Every other fix is worthless until this is resolved. Day 1 task.
+  </div>
+  <div class="grid-2" style="margin-bottom:24px">
+    <div class="card">
+      <h3>Situation</h3>
+      <ul>
+        <li>Brand-new or recently re-launched site (all pages dated 29–30 May 2026)</li>
+        <li>GBP confirmed via Knowledge Graph ID — only current search asset</li>
+        <li>All 16 pages exist but none are indexed by Google</li>
+        <li>Zero organic traffic or rankings currently</li>
+        <li>Competing vs national brands (Keytek, Lockrite, Keys4U) and established local independents</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>The Opportunity</h3>
+      <ul>
+        <li>Newham has ~374,000 residents — one of London's densest boroughs</li>
+        <li>Emergency locksmith = highest-urgency local search. Callers act within minutes of searching</li>
+        <li>The Local 3-Pack (Map Pack) is the primary conversion surface — most callers never visit the website</li>
+        <li>A genuine Newham-based independent with 30+ reviews and full GBP can beat national brands in the Map Pack</li>
+        <li>Several competitor area and service pages are thin — content advantage is achievable</li>
+      </ul>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat-box"><div class="sv">46%</div><div class="sl">of all Google searches have local intent in 2026</div></div>
+    <div class="stat-box"><div class="sv">32%</div><div class="sl">of Map Pack ranking determined by GBP signals (Whitespark 2026)</div></div>
+    <div class="stat-box"><div class="sv">87%</div><div class="sl">of consumers read reviews before contacting a local business</div></div>
+    <div class="stat-box"><div class="sv">41%</div><div class="sl">year-on-year increase in GBP actions (calls, directions) 2025–2026</div></div>
+  </div>
+  <p class="cite">Source: Whitespark Local Search Ranking Factors 2026; Digital Applied Local SEO Statistics 2026</p>
+</section>
+
+<!-- LOCAL SEO DEEP DIVE -->
+<section class="section" id="local-seo">
+  <div class="section-head">
+    <div class="section-icon">&#128205;</div>
+    <div><h2>Local SEO Deep Dive</h2><div class="desc">Extended audit — additional research findings beyond the original report</div></div>
+  </div>
+  <div class="alert amber">
+    <strong>Local SEO Score: 42/100 — Highest-scoring area, but still failing</strong>
+    The GBP exists — that is the only confirmed asset. Everything else (completeness, reviews, citations, schema, NAP, area pages) is missing or critically underdeveloped.
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Ranking Factor</th><th>Weight 2026</th><th>Current Status</th><th>Gap</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Proximity to searcher</strong></td>
+          <td><span class="kw-vol">~55%</span></td>
+          <td><span class="badge green">Structural advantage</span> Being genuinely Newham-based cannot be replicated by nationals</td>
+          <td>None — this is your biggest moat</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td><strong>GBP signals</strong> (category, completeness, posts, Q&A)</td>
+          <td><span class="kw-vol">~32%</span></td>
+          <td><span class="badge red">Critical</span> GBP exists but category, description, hours, photos, service area all unknown/absent</td>
+          <td>Very large — a fully optimised GBP completely outranks a bare one</td>
+          <td><span class="badge red">P0</span></td>
+        </tr>
+        <tr>
+          <td><strong>Review signals</strong> (count, velocity, rating, responses)</td>
+          <td><span class="kw-vol">16–20%</span></td>
+          <td><span class="badge red">Critical</span> Likely very low for a new site. Need 30+ reviews to compete for Map Pack</td>
+          <td>Competitors have 50–6,000+ reviews. Largest compounding gap.</td>
+          <td><span class="badge red">P0</span></td>
+        </tr>
+        <tr>
+          <td><strong>On-page / website signals</strong> (schema, local pages, NAP)</td>
+          <td><span class="kw-vol">~19%</span></td>
+          <td><span class="badge red">Critical</span> Site not indexed. No schema. Area page URLs wrong and 4 levels deep</td>
+          <td>Large — schema missing, area pages buried, no postcodes in URLs</td>
+          <td><span class="badge amber">P1</span></td>
+        </tr>
+        <tr>
+          <td><strong>Citations and directory signals</strong></td>
+          <td><span class="kw-vol">~11%</span></td>
+          <td><span class="badge red">Likely zero</span> New domain — likely no directory listings submitted yet</td>
+          <td>Competitors have 30–100+ consistent citations</td>
+          <td><span class="badge amber">P1</span></td>
+        </tr>
+        <tr>
+          <td><strong>Backlink authority</strong></td>
+          <td><span class="kw-vol">~7%</span></td>
+          <td><span class="badge red">Zero</span> No indexed pages means no backlinks yet</td>
+          <td>Build via Checkatrade, TrustATrader, MLA, Newham Recorder</td>
+          <td><span class="badge blue">P2</span></td>
+        </tr>
+        <tr>
+          <td><strong>AI search visibility (AEO)</strong></td>
+          <td><span class="kw-vol">Emerging</span></td>
+          <td><span class="badge muted">Not started</span> New 2026 category — AI systems recommend businesses with structured authority</td>
+          <td>Schema, FAQ content, expert list appearances, unstructured citations</td>
+          <td><span class="badge blue">P3</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cite">Source: Whitespark Local Search Ranking Factors 2026; Map Kings Locksmith SEO Guide 2026; ReplyOnTheFly Local SEO 2026</p>
+
+  <h3 style="font-size:17px;color:var(--white);margin:32px 0 16px;font-weight:600;">Additional Issues Found — Extended Research</h3>
+  <div class="grid-2">
+    <div class="card">
+      <h3>GBP Service Area — Underserved</h3>
+      <p>Newham postcodes confirmed: <strong>E6</strong> (East Ham, Beckton), <strong>E7</strong> (Forest Gate), <strong>E12</strong> (Manor Park), <strong>E13</strong> (Plaistow, Upton Park), <strong>E15</strong> (Stratford, West Ham), <strong>E16</strong> (Canning Town, Custom House, Royal Victoria, Silvertown). All must appear in GBP service area AND as area page content on the website.</p>
+    </div>
+    <div class="card">
+      <h3>High-Growth Areas Not Covered</h3>
+      <p>Stratford E15 (Westfield, Olympic Park, East Village new-builds) and Canning Town E16 (major regeneration, new residential towers) have rapidly growing populations of new tenants who need locksmiths. <strong>West Ham E15 and Upton Park E13</strong> are densely residential with no current area pages — low competition, high intent.</p>
+    </div>
+    <div class="card">
+      <h3>Near Me and Voice Search</h3>
+      <p>Emergency locksmith searches are overwhelmingly mobile and conversational: "locksmith near me open now", "emergency locksmith Stratford E15". Pages need natural-language answers embedded: response time, areas covered, 24/7 confirmation, pricing. The FAQ page with FAQPage schema is perfectly placed to capture AI-generated answers.</p>
+    </div>
+    <div class="card">
+      <h3>MLA Accreditation Gap</h3>
+      <p>Key competitors (The Key Locksmith, Lockrite) feature MLA accreditation prominently on GBP and website. This is a confirmed conversion signal. Without it, customers choose accredited rivals even at lower proximity. Also missing: DBS checks mention, insurance statements, BS3621 lock compliance — all expected trust signals in this sector.</p>
+    </div>
+    <div class="card">
+      <h3>Photo Strategy Missing</h3>
+      <p>GBPs with 10+ photos receive 35% more website clicks. For a locksmith: branded van parked in recognisable Newham locations (Green Street, Stratford High Street), locksmith completing a job, BS3621 lock close-up, certificates. Geo-tagging photos from actual Newham job sites reinforces geographic relevance signals to Google.</p>
+    </div>
+    <div class="card">
+      <h3>Review Velocity — The Compounding Problem</h3>
+      <p>Review recency now outweighs total count in the 2026 algorithm. A competitor with 80 recent reviews may outrank one with 200 stale ones. Getting <strong>5+ new reviews per month</strong> from Newham customers — who naturally mention the area in review text — is one of the highest-ROI actions available. Set up an SMS review-request workflow on Day 1.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GBP ANALYSIS -->
+<section class="section" id="gbp">
+  <div class="section-head">
+    <div class="section-icon">&#127970;</div>
+    <div><h2>Google Business Profile Analysis</h2><div class="desc">The single most important local ranking asset — currently under-exploited</div></div>
+  </div>
+  <div class="alert green">
+    <strong>GBP EXISTS — Knowledge Graph ID: /g/11zbpt261t confirmed</strong>
+    This is the only confirmed search asset. GBP signals account for 32% of Map Pack ranking. Every incomplete field is a missed ranking opportunity.
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>GBP Element</th><th>Status</th><th>Required Action</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Primary Category</strong></td><td><span class="badge amber">Unknown</span></td><td>Must be <strong>Locksmith</strong>. Wrong category = invisible in Map Pack for core queries</td><td><span class="badge red">Critical</span></td></tr>
+        <tr><td><strong>Secondary Categories</strong></td><td><span class="badge amber">Unknown</span></td><td>Add: "Emergency Locksmith Service", "Security System Installer"</td><td><span class="badge red">High</span></td></tr>
+        <tr><td><strong>Business Description</strong> (750 chars)</td><td><span class="badge amber">Unknown</span></td><td>Keyword-rich description: 24/7, Newham, response time, all E postcodes, no call-out fee, key services</td><td><span class="badge red">High</span></td></tr>
+        <tr><td><strong>Opening Hours</strong></td><td><span class="badge amber">Unknown</span></td><td>Set: Open 24 hours, all 7 days. Add bank holiday special hours. Emergency trust depends on this.</td><td><span class="badge red">High</span></td></tr>
+        <tr><td><strong>Service Area</strong></td><td><span class="badge amber">Unknown</span></td><td>Add all Newham postcodes E6, E7, E12, E13, E15, E16 plus all neighbourhood names</td><td><span class="badge red">High</span></td></tr>
+        <tr><td><strong>Services List</strong></td><td><span class="badge amber">Unknown</span></td><td>Add all services with descriptions: Emergency Lockout, Lock Change, Burglary Repairs, UPVC Door, Landlord Services, Key Cutting</td><td><span class="badge amber">High</span></td></tr>
+        <tr><td><strong>Photos</strong> (target: 15+)</td><td><span class="badge amber">Unknown</span></td><td>Branded van at Newham locations, locksmith at work, BS3621 locks, certificates. Geo-tag each photo at Newham GPS coordinates.</td><td><span class="badge amber">High</span></td></tr>
+        <tr><td><strong>Review Count</strong></td><td><span class="badge red">Likely &lt;10</span></td><td>Target 30+ reviews at 4.8 stars to compete in Map Pack. SMS review-request after every job. 5 new reviews/month minimum.</td><td><span class="badge red">Critical</span></td></tr>
+        <tr><td><strong>Review Responses</strong></td><td><span class="badge amber">Unknown</span></td><td>Respond to every review within 24 hours. Businesses responding to 80%+ of reviews see measurable ranking boost.</td><td><span class="badge amber">Medium</span></td></tr>
+        <tr><td><strong>Q&A Section</strong></td><td><span class="badge red">Likely absent</span></td><td>Seed 6–8 Q&As: response time, call-out fees, postcodes covered, MLA accreditation, 24/7 availability, lock types fitted</td><td><span class="badge blue">Medium</span></td></tr>
+        <tr><td><strong>GBP Posts</strong></td><td><span class="badge red">Absent</span></td><td>Weekly posts: seasonal security tips, service highlights, completed jobs. Improves CTR and engagement signals.</td><td><span class="badge blue">Medium</span></td></tr>
+        <tr><td><strong>Website URL</strong></td><td><span class="badge amber">Unknown</span></td><td>Must point to <code>https://newhamemergencylocksmiths.co.uk/</code> — HTTPS, not HTTP</td><td><span class="badge blue">Medium</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>GBP Description Template (620 chars — expand with MLA once achieved)</h3>
+    <p style="margin-top:8px;line-height:1.8;">Newham Emergency Locksmiths — your trusted 24/7 locksmith serving East London. We cover all Newham postcodes: E6, E7, E12, E13, E15 and E16 — including Stratford, East Ham, Forest Gate, Canning Town, Plaistow, Beckton, Manor Park, West Ham and Upton Park. Available around the clock with a 30-minute response guarantee. No call-out fees, no hidden charges — just transparent pricing. Services include emergency lockouts, lock changes, burglary repairs, lock upgrades to BS3621, UPVC door repairs, landlord lock changes and key cutting. Fully insured local engineers. Call us any time.</p>
+  </div>
+</section>
+
+<!-- CITATIONS -->
+<section class="section" id="citations">
+  <div class="section-head">
+    <div class="section-icon">&#128203;</div>
+    <div><h2>Citations &amp; NAP Consistency</h2><div class="desc">Directory listings, trust platforms, and name-address-phone consistency</div></div>
+  </div>
+  <div class="alert">
+    <strong>Estimated current citations: Near zero (new domain)</strong>
+    Competitors have 30–100+ consistent directory citations. Citations account for ~11% of local ranking weight. This is a straightforward, high-ROI gap to close quickly.
+  </div>
+  <div class="grid-2" style="margin-bottom:20px;">
+    <div>
+      <h3 style="color:var(--white);margin-bottom:12px;font-size:15px;font-weight:600;">Priority Tier 1 — Submit First</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Directory</th><th>Type</th><th>Backlink</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Yell.com</strong></td><td>General local</td><td>Do-follow</td></tr>
+          <tr><td><strong>Checkatrade</strong></td><td>Trades — vetting required</td><td>Do-follow</td></tr>
+          <tr><td><strong>TrustATrader</strong></td><td>Trades — vetting required</td><td>Do-follow</td></tr>
+          <tr><td><strong>Thomson Local</strong></td><td>General local</td><td>No-follow</td></tr>
+          <tr><td><strong>Bark.com</strong></td><td>Lead gen + listing</td><td>No-follow</td></tr>
+          <tr><td><strong>Yelp UK</strong></td><td>Review platform</td><td>No-follow</td></tr>
+          <tr><td><strong>192.com</strong></td><td>UK business directory</td><td>No-follow</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 style="color:var(--white);margin-bottom:12px;font-size:15px;font-weight:600;">Priority Tier 2 — Submit Month 1</h3>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Directory</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>FreeIndex</strong></td><td>UK trade focus</td></tr>
+          <tr><td><strong>Scoot</strong></td><td>UK SME directory</td></tr>
+          <tr><td><strong>Cylex UK</strong></td><td>UK business</td></tr>
+          <tr><td><strong>Hotfrog UK</strong></td><td>Global + UK</td></tr>
+          <tr><td><strong>TouchLocal</strong></td><td>Local trades</td></tr>
+          <tr><td><strong>MyBuilder</strong></td><td>Trades platform</td></tr>
+          <tr><td><strong>Rated People</strong></td><td>Trade reviews</td></tr>
+          <tr><td><strong>Brownbook</strong></td><td>UK business</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>NAP Consistency Rules — Critical</h3>
+    <p>Name, Address, Phone must be byte-for-byte identical across website, GBP, and every directory. Even minor differences ("Ltd" vs "Limited", spacing variations) weaken local authority. Before any submission:</p>
+    <ul style="margin-top:10px;">
+      <li>Decide the exact business name format and never deviate</li>
+      <li>Use a consistent address format including postcode and correct capitalisation</li>
+      <li>Use one primary phone number everywhere (consistent UK format throughout)</li>
+      <li>Use BrightLocal or Whitespark to audit NAP consistency after initial submissions</li>
+      <li>If phone number ever changes, update every citation immediately</li>
+    </ul>
+  </div>
+</section>
+
+<!-- KEYWORDS -->
+<section class="section" id="keywords">
+  <div class="section-head">
+    <div class="section-icon">&#128269;</div>
+    <div><h2>Target Keywords — Local SEO Focus</h2><div class="desc">Priority keyword map across all intent types and Newham area coverage</div></div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Keyword</th><th>Monthly Vol (est.)</th><th>Intent</th><th>Target Page</th><th>Map Pack?</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td><strong>emergency locksmith Newham</strong></td><td><span class="kw-vol">200–400</span></td><td>Emergency</td><td>Homepage</td><td>Yes — primary</td><td><span class="badge red">P0</span></td></tr>
+        <tr><td><strong>locksmith Newham 24/7</strong></td><td><span class="kw-vol">100–250</span></td><td>Emergency</td><td>Homepage</td><td>Yes</td><td><span class="badge red">P0</span></td></tr>
+        <tr><td><strong>locksmith near me</strong> (Newham-based)</td><td><span class="kw-vol">High local</span></td><td>Emergency</td><td>GBP + Homepage</td><td>Yes — proximity-driven</td><td><span class="badge red">P0</span></td></tr>
+        <tr><td><strong>emergency locksmith Stratford E15</strong></td><td><span class="kw-vol">50–150</span></td><td>Emergency</td><td>/areas/stratford-e15/</td><td>Yes</td><td><span class="badge red">P0</span></td></tr>
+        <tr><td><strong>emergency locksmith East Ham E6</strong></td><td><span class="kw-vol">50–120</span></td><td>Emergency</td><td>/areas/east-ham-e6/</td><td>Yes</td><td><span class="badge red">P0</span></td></tr>
+        <tr><td><strong>locksmith Forest Gate E7</strong></td><td><span class="kw-vol">30–80</span></td><td>Emergency</td><td>/areas/forest-gate-e7/</td><td>Yes</td><td><span class="badge amber">P1</span></td></tr>
+        <tr><td><strong>locksmith Canning Town E16</strong></td><td><span class="kw-vol">30–70</span></td><td>Emergency</td><td>/areas/canning-town-e16/</td><td>Yes</td><td><span class="badge amber">P1</span></td></tr>
+        <tr><td><strong>locksmith Plaistow E13</strong></td><td><span class="kw-vol">20–60</span></td><td>Emergency</td><td>/areas/plaistow-e13/</td><td>Yes</td><td><span class="badge amber">P1</span></td></tr>
+        <tr><td><strong>landlord locksmith Newham</strong></td><td><span class="kw-vol">30–80</span></td><td>Commercial</td><td>/services/landlord-locksmith-services/</td><td>Partial</td><td><span class="badge amber">P1</span></td></tr>
+        <tr><td><strong>lock change Newham</strong></td><td><span class="kw-vol">40–100</span></td><td>Commercial</td><td>/services/lock-change/ (missing)</td><td>Partial</td><td><span class="badge amber">P1</span></td></tr>
+        <tr><td><strong>burglary repair locksmith Newham</strong></td><td><span class="kw-vol">20–60</span></td><td>Commercial</td><td>/services/burglary-repairs/ (missing)</td><td>Partial</td><td><span class="badge blue">P2</span></td></tr>
+        <tr><td><strong>BS3621 lock installation Newham</strong></td><td><span class="kw-vol">10–30</span></td><td>Commercial</td><td>/services/lock-installation-and-upgrades/</td><td>No</td><td><span class="badge blue">P2</span></td></tr>
+        <tr><td><strong>what to do if locked out Newham</strong></td><td><span class="kw-vol">20–50</span></td><td>Informational</td><td>/blog/ (missing)</td><td>AI Answer</td><td><span class="badge blue">P3</span></td></tr>
+        <tr><td><strong>best locks for flats East London</strong></td><td><span class="kw-vol">20–60</span></td><td>Informational</td><td>/blog/ (missing)</td><td>No</td><td><span class="badge blue">P3</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="cite">Volume estimates based on Newham population density and East London locksmith market comparables. Verify via GSC once indexed.</p>
+</section>
+
+<!-- COMPETITORS -->
+<section class="section" id="competitors">
+  <div class="section-head">
+    <div class="section-icon">&#127942;</div>
+    <div><h2>Competitive Landscape</h2><div class="desc">Who is winning the Newham Map Pack, why, and how to beat them</div></div>
+  </div>
+  <div class="alert amber">
+    <strong>Key Insight: The Local Independent Advantage</strong>
+    National brands dominate organic Google but can be outranked in the Map Pack by a genuine local independent. Google's proximity weighting (~55%) heavily favours businesses based in Newham. Add 30+ reviews + full GBP = Map Pack becomes winnable against nationals.
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Competitor</th><th>Type</th><th>Reviews</th><th>Accreditation</th><th>Key Strength</th><th>Threat</th><th>Your Counter</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Keytek</strong></td><td>National</td><td>6,000+ Trustpilot</td><td>DBS, 25yr exp</td><td>Review dominance</td><td class="threat-high">Very High</td><td>Hyper-local trust + faster proximity response</td></tr>
+        <tr><td><strong>Lockrite</strong></td><td>National</td><td>1,000+ Google</td><td>MLA, DBS</td><td>Newham-specific landing page</td><td class="threat-high">Very High</td><td>Local GBP proximity + real reviews from Newham addresses</td></tr>
+        <tr><td><strong>Keys4U</strong></td><td>National</td><td>500+ Google</td><td>MLA-aligned</td><td>Brand recognition, guarantee</td><td class="threat-high">Very High</td><td>Local authenticity + competitive pricing transparency</td></tr>
+        <tr><td><strong>The Key Locksmith</strong></td><td>Local independent</td><td>30–80 @ 4.8 stars</td><td>MLA Member</td><td>MLA, family-run trust</td><td class="threat-med">High</td><td>More area pages + postcode-specific content + more reviews</td></tr>
+        <tr><td><strong>ITCC Locksmiths</strong></td><td>Local independent</td><td>50–100 @ 4.7 stars</td><td>Local vetting</td><td>Truly local E13, 30-min response</td><td class="threat-med">High</td><td>Broader coverage + schema + MLA accreditation</td></tr>
+        <tr><td><strong>locksmithsnewham.co.uk</strong></td><td>Local brand</td><td>20–50 Google</td><td>None visible</td><td>Exact-match domain</td><td class="threat-low">Medium</td><td>Better content depth + MLA + stronger review velocity</td></tr>
+        <tr><td><strong>Mikey Locks</strong></td><td>East London indie</td><td>Unknown</td><td>Unknown</td><td>Covers Royal Docks, Silvertown, Custom House</td><td class="threat-low">Medium</td><td>Create dedicated area pages for these sub-areas first</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Competitive Gaps — Where to Win Fastest</h3>
+    <ul style="margin-top:8px;">
+      <li><strong>Map Pack for hyper-local queries</strong> (e.g. "locksmith E13", "locksmith Plaistow") — proximity weighting makes these winnable within 60–90 days of GBP optimisation + review velocity</li>
+      <li><strong>Area pages for underserved neighbourhoods</strong> — West Ham E15, Upton Park E13, Custom House E16, Silvertown E16 have weaker competitor coverage</li>
+      <li><strong>Landlord locksmith niche</strong> — Newham has a large private rental sector; competitors have thin landlord-specific content</li>
+      <li><strong>UPVC door repair</strong> — common in Newham's housing stock, underserved by current competitor pages</li>
+    </ul>
+  </div>
+</section>
+
+<!-- AREA PAGES -->
+<section class="section" id="area-pages">
+  <div class="section-head">
+    <div class="section-icon">&#128506;</div>
+    <div><h2>Area Pages — Restructure &amp; Expansion Plan</h2><div class="desc">Current pages are buried 4 levels deep. Restructure, fix URLs, add postcodes, and expand.</div></div>
+  </div>
+  <div class="alert">
+    <strong>All 7 current area pages must move: /services/emergency-lockout/[area]/ to /areas/[area]-[postcode]/</strong>
+    Set 301 redirects from every old URL. Add postcode to H1, title tag, and body content on every page.
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Area</th><th>Postcode</th><th>New URL</th><th>Target H1</th><th>Status</th><th>Local Landmark</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Stratford</strong></td><td>E15</td><td><code>/areas/stratford-e15/</code></td><td>Emergency Locksmith Stratford E15</td><td><span class="badge amber">Restructure</span></td><td>Westfield, Olympic Park, East Village</td></tr>
+        <tr><td><strong>East Ham</strong></td><td>E6</td><td><code>/areas/east-ham-e6/</code></td><td>Emergency Locksmith East Ham E6</td><td><span class="badge red">Fix slug + restructure</span></td><td>East Ham High Street, East Ham station</td></tr>
+        <tr><td><strong>Forest Gate</strong></td><td>E7</td><td><code>/areas/forest-gate-e7/</code></td><td>Emergency Locksmith Forest Gate E7</td><td><span class="badge amber">Restructure</span></td><td>Green Street, Forest Gate station</td></tr>
+        <tr><td><strong>Plaistow</strong></td><td>E13</td><td><code>/areas/plaistow-e13/</code></td><td>Emergency Locksmith Plaistow E13</td><td><span class="badge amber">Restructure</span></td><td>Plaistow station, Queens Market</td></tr>
+        <tr><td><strong>Canning Town</strong></td><td>E16</td><td><code>/areas/canning-town-e16/</code></td><td>Emergency Locksmith Canning Town E16</td><td><span class="badge amber">Restructure</span></td><td>Canning Town station (Elizabeth Line), new developments</td></tr>
+        <tr><td><strong>Beckton</strong></td><td>E6</td><td><code>/areas/beckton-e6/</code></td><td>Emergency Locksmith Beckton E6</td><td><span class="badge amber">Restructure</span></td><td>Beckton Retail Park, Gallions Reach</td></tr>
+        <tr><td><strong>Manor Park</strong></td><td>E12</td><td><code>/areas/manor-park-e12/</code></td><td>Emergency Locksmith Manor Park E12</td><td><span class="badge amber">Restructure</span></td><td>Manor Park station</td></tr>
+        <tr style="background:rgba(0,194,255,.04)"><td><strong>West Ham ★</strong></td><td>E15</td><td><code>/areas/west-ham-e15/</code></td><td>Emergency Locksmith West Ham E15</td><td><span class="badge blue">Create new</span></td><td>London Stadium, Olympic Park, dense residential</td></tr>
+        <tr style="background:rgba(0,194,255,.04)"><td><strong>Upton Park ★</strong></td><td>E13</td><td><code>/areas/upton-park-e13/</code></td><td>Emergency Locksmith Upton Park E13</td><td><span class="badge blue">Create new</span></td><td>Queens Market, Green Street shopping</td></tr>
+        <tr style="background:rgba(0,194,255,.04)"><td><strong>Custom House</strong></td><td>E16</td><td><code>/areas/custom-house-e16/</code></td><td>Emergency Locksmith Custom House E16</td><td><span class="badge blue">Create new</span></td><td>ExCeL London, Royal Victoria Dock, DLR</td></tr>
+        <tr style="background:rgba(0,194,255,.04)"><td><strong>Silvertown</strong></td><td>E16</td><td><code>/areas/silvertown-e16/</code></td><td>Emergency Locksmith Silvertown E16</td><td><span class="badge blue">Create new</span></td><td>Silvertown Quays development, Thames Barrier Park</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Area Page Content Template (min. 350–500 words per page)</h3>
+    <ul style="margin-top:8px;">
+      <li><strong>H1:</strong> "Emergency Locksmith [Area] [Postcode]"</li>
+      <li><strong>Opening paragraph:</strong> Who you are, Newham base, 30-min response, 24/7, mention the postcode prominently</li>
+      <li><strong>Services section:</strong> List services available in that area with brief descriptions</li>
+      <li><strong>Local context:</strong> Mention 2–3 local landmarks or roads — shows genuine local knowledge to both users and Google</li>
+      <li><strong>Trust section:</strong> Insurance, accreditations, no call-out fee, BS3621 compliance</li>
+      <li><strong>Schema:</strong> LocalBusiness JSON-LD with areaServed: "[Area]" and "[Postcode]"</li>
+      <li><strong>CTA:</strong> Large phone number, call-now button, response time promise</li>
+      <li><strong>Internal links:</strong> Homepage, services hub, and 2–3 neighbouring area pages</li>
+    </ul>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section class="section" id="strategy">
+  <div class="section-head">
+    <div class="section-icon">&#9820;</div>
+    <div><h2>Local SEO Strategy</h2><div class="desc">A phased approach to dominating the Newham local locksmith market</div></div>
+  </div>
+  <div class="grid-3" style="margin-bottom:28px;">
+    <div class="card">
+      <h3>Primary Goal</h3>
+      <p>Appear in the <strong>Google Local 3-Pack (Map Pack)</strong> for "emergency locksmith Newham" and all postcode/area variants. This is where 80%+ of emergency locksmith calls originate — people call directly from the Map Pack without visiting the website.</p>
+    </div>
+    <div class="card">
+      <h3>Timeline to Results</h3>
+      <p><strong>Days 1–14:</strong> GBP improvements visible<br>
+      <strong>60–90 days:</strong> Map Pack improvements as reviews build<br>
+      <strong>3–6 months:</strong> Stable organic rankings for area pages<br>
+      <strong>6–12 months:</strong> Competitive Map Pack positioning vs nationals</p>
+    </div>
+    <div class="card">
+      <h3>Unique Positioning</h3>
+      <p>National brands cannot compete on genuine local proximity and authenticity. The message: <em>"The only locksmith genuinely based in Newham"</em> — local knowledge, 30-min response, real reviews from Newham residents. This is the sustainable moat.</p>
+    </div>
+  </div>
+
+  <div class="priority-block">
+    <div class="ph">Pillar 1 — Foundation (Must complete before everything else)</div>
+    <h3>Fix Indexability + Google Business Profile</h3>
+    <ul class="task-list">
+      <li>Unblock Googlebot in Cloudflare — whitelist Google's crawler User-Agent</li>
+      <li>Fix robots.txt, set up Google Search Console, submit sitemap</li>
+      <li>Complete GBP: correct category, 24/7 hours, all E postcodes in service area, services list, keyword-rich description</li>
+      <li>Upload 15+ GBP photos and set up SMS review-request workflow immediately</li>
+      <li>Add Locksmith JSON-LD schema to homepage and all service pages</li>
+    </ul>
+  </div>
+  <div class="priority-block p1">
+    <div class="ph">Pillar 2 — Local Dominance (Weeks 1–4)</div>
+    <h3>Review Velocity + Area Page Architecture</h3>
+    <ul class="task-list">
+      <li>Target 5+ new Google reviews per month — SMS customers immediately after job completion</li>
+      <li>Restructure all area pages to /areas/[area]-[postcode]/ with 301 redirects from old URLs</li>
+      <li>Add postcode to every area page H1, title, meta description and body content</li>
+      <li>Fix East Ham URL slug from "eastham" to "east-ham"</li>
+      <li>Optimise all 16 page title tags and meta descriptions</li>
+      <li>Submit NAP-consistent listings to Yell, Checkatrade, TrustATrader, Bark, Yelp UK, 192.com, Thomson Local</li>
+    </ul>
+  </div>
+  <div class="priority-block p2">
+    <div class="ph">Pillar 3 — Authority Building (Month 1–2)</div>
+    <h3>Citations + Trust Signals + Content Depth</h3>
+    <ul class="task-list">
+      <li>Complete all Tier 1 and Tier 2 directory submissions with consistent NAP</li>
+      <li>Register on Checkatrade and TrustATrader — begin vetting process now (takes several weeks)</li>
+      <li>Pursue MLA (Master Locksmiths Association) membership — the gold standard trust signal</li>
+      <li>Improve service page content to 600–800 words each with technical detail (BS3621, non-destructive entry)</li>
+      <li>Create 4 missing area pages: West Ham, Upton Park, Custom House, Silvertown</li>
+      <li>Create 4 missing service pages: Lock Change, Burglary Repairs, UPVC Door Repair, Key Cutting</li>
+    </ul>
+  </div>
+  <div class="priority-block p3">
+    <div class="ph">Pillar 4 — Long-Term Growth (Month 2–6+)</div>
+    <h3>Content Marketing + AI Visibility + Link Building</h3>
+    <ul class="task-list">
+      <li>Launch /blog/ — target informational keywords that convert: "what to do if locked out", "best locks for East London flats"</li>
+      <li>Contact Newham Recorder for a local business feature — high-authority local backlink</li>
+      <li>Join Newham Chamber of Commerce or local business group for network links and mentions</li>
+      <li>Implement AEO (Answer Engine Optimisation) — FAQ content that AI tools cite when recommending locksmiths in Newham</li>
+      <li>Monitor GSC weekly, keyword rankings monthly, GBP insights weekly</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap">
+  <div class="section-head">
+    <div class="section-icon">&#128197;</div>
+    <div><h2>Implementation Roadmap</h2><div class="desc">Week-by-week action plan with owners and time estimates</div></div>
+  </div>
+  <div class="roadmap">
+    <div class="rm-phase">
+      <div class="rm-dot r">P0</div>
+      <div class="rm-label">Days 1–3 · Critical — Nothing else works until Googlebot is unblocked</div>
+      <h3>Unblock Googlebot and Set Up Foundations</h3>
+      <ul class="rm-items">
+        <li>Fix Cloudflare/CDN firewall — whitelist Googlebot User-Agent <span class="effort">30 min | Dev</span></li>
+        <li>Verify robots.txt — no Disallow: / directive, add Sitemap: reference <span class="effort">15 min | Dev</span></li>
+        <li>Set up Google Search Console — verify domain property <span class="effort">1 hour | Owner/SEO</span></li>
+        <li>Submit sitemap.xml via GSC <span class="effort">15 min | SEO</span></li>
+        <li>Remove duplicate homepage entry from sitemap <span class="effort">15 min | Dev</span></li>
+        <li>Request indexing via GSC: homepage, /services/emergency-lockout/, /pricing/ <span class="effort">30 min | SEO</span></li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rm-dot r">P0</div>
+      <div class="rm-label">Days 1–7 · GBP — Do in parallel with technical fixes</div>
+      <h3>Complete Google Business Profile</h3>
+      <ul class="rm-items">
+        <li>Verify primary category = Locksmith, add secondary categories <span class="effort">30 min | Owner</span></li>
+        <li>Write and publish 750-char GBP description <span class="effort">1 hour | Owner/SEO</span></li>
+        <li>Set opening hours: 24 hours, all 7 days <span class="effort">15 min | Owner</span></li>
+        <li>Add all service areas: E6, E7, E12, E13, E15, E16 plus neighbourhood names <span class="effort">30 min | Owner</span></li>
+        <li>Add full services list with descriptions <span class="effort">1 hour | Owner</span></li>
+        <li>Upload 15+ photos: van, work in progress, certificates, area shots <span class="effort">1 hour | Owner</span></li>
+        <li>Seed 6–8 Q&As in GBP Q&A section <span class="effort">45 min | Owner</span></li>
+        <li>Set up SMS review-request workflow — send link after every job <span class="effort">2 hours setup | Owner</span></li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rm-dot a">P1</div>
+      <div class="rm-label">Week 1–2 · On-Page SEO</div>
+      <h3>Title Tags, Schema, and Area Page Architecture</h3>
+      <ul class="rm-items">
+        <li>Add Locksmith JSON-LD schema to all pages <span class="effort">3–4 hours | Dev/SEO</span></li>
+        <li>Add FAQPage JSON-LD to FAQ page and homepage <span class="effort">1 hour | Dev</span></li>
+        <li>Write optimised title tags for all 16 pages <span class="effort">2 hours | SEO</span></li>
+        <li>Write meta descriptions for all 16 pages <span class="effort">2 hours | SEO</span></li>
+        <li>Verify/add H1 tags — one per page, primary keyword and location <span class="effort">1 hour | Dev/SEO</span></li>
+        <li>Fix East Ham slug: eastham to east-ham plus 301 redirect <span class="effort">30 min | Dev</span></li>
+        <li>Restructure all 7 area pages to /areas/[area]-[postcode]/ plus 301s <span class="effort">2–3 hours | Dev</span></li>
+        <li>Add postcode to all area page H1s and body content <span class="effort">2 hours | Content</span></li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rm-dot a">P1</div>
+      <div class="rm-label">Month 1 · Citations and Content</div>
+      <h3>Directory Submissions and Content Depth</h3>
+      <ul class="rm-items">
+        <li>Submit to top 20 directories with consistent NAP <span class="effort">4–5 hours | Owner/SEO</span></li>
+        <li>Begin Checkatrade and TrustATrader verification process (multi-week) <span class="effort">2–4 hours | Owner</span></li>
+        <li>Improve all service pages to 600–800 words with technical content <span class="effort">6–10 hours | Content</span></li>
+        <li>Improve all area pages with postcodes, landmarks, unique paragraphs <span class="effort">4–6 hours | Content</span></li>
+        <li>Fix sitemap changefreq values across all pages <span class="effort">30 min | Dev</span></li>
+        <li>Set up GA4 — track phone clicks and form submissions <span class="effort">1 hour | Dev</span></li>
+        <li>Test Core Web Vitals on mobile — target LCP under 2.5s <span class="effort">Variable | Dev</span></li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rm-dot b">P2</div>
+      <div class="rm-label">Month 2 · Expansion</div>
+      <h3>New Pages and Trust Signals</h3>
+      <ul class="rm-items">
+        <li>Create 4 new area pages: West Ham E15, Upton Park E13, Custom House E16, Silvertown E16 <span class="effort">4–6 hours | Content/Dev</span></li>
+        <li>Create 4 new service pages: Lock Change, Burglary Repairs, UPVC Door Repair, Key Cutting <span class="effort">8–12 hours | Content/Dev</span></li>
+        <li>Create /areas/ hub page linking to all area pages <span class="effort">1 hour | Dev</span></li>
+        <li>Apply for MLA membership — begin verification process <span class="effort">Ongoing | Owner</span></li>
+        <li>Display MLA badge and insurance details on homepage once achieved <span class="effort">1 hour | Dev</span></li>
+        <li>Embed Google Map on contact/about page <span class="effort">30 min | Dev</span></li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rm-dot g">P3</div>
+      <div class="rm-label">Month 3+ · Content Marketing and Authority</div>
+      <h3>Blog, Link Building, and AI Visibility</h3>
+      <ul class="rm-items">
+        <li>Launch /blog/ with first 3 posts targeting informational Newham locksmith queries <span class="effort">6–10 hours | Content</span></li>
+        <li>Contact Newham Recorder for business feature or press mention <span class="effort">2 hours | Owner</span></li>
+        <li>Join Newham Chamber of Commerce or local business associations <span class="effort">1 hour | Owner</span></li>
+        <li>Implement AEO content — structured Q&amp;A for AI search recommendations <span class="effort">3 hours | Content/SEO</span></li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rm-dot g">&#8734;</div>
+      <div class="rm-label">Ongoing — Every Week</div>
+      <h3>Monitoring and Active Management</h3>
+      <ul class="rm-items">
+        <li>SMS review request to every completed job customer <span class="effort">2 min/job | Owner</span></li>
+        <li>Respond to every Google review within 24 hours <span class="effort">15 min/review | Owner</span></li>
+        <li>Post to GBP once per week <span class="effort">30 min/week | Owner</span></li>
+        <li>Review GSC weekly: impressions, clicks, crawl coverage <span class="effort">1 hour/week | SEO</span></li>
+        <li>Track keyword rankings monthly across all Newham and postcode variants <span class="effort">1 hour/month | SEO</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <p>Local SEO Deep Audit &amp; Strategy — Newham Emergency Locksmiths &nbsp;|&nbsp; Report Date: 31 May 2026 &nbsp;|&nbsp; Enhanced AI SEO Analysis &nbsp;|&nbsp; Commission a live crawl once Googlebot block is resolved to validate all on-page findings.</p>
+</footer>
+<script>
+  const sections=document.querySelectorAll('section[id]');
+  const tabs=document.querySelectorAll('.nav-tab');
+  window.addEventListener('scroll',function(){
+    let cur='';
+    sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+    tabs.forEach(t=>{t.classList.toggle('active',t.getAttribute('href')==='#'+cur);});
+  },{passive:true});
+</script>
+</body>
+</html>
